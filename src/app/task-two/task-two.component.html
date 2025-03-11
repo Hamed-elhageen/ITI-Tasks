@@ -1,0 +1,21 @@
+<div class="bg-slate-100">
+    <div class="container text-center ">
+        <h1 class="mb-8 text-4xl font-bold text-transparent bg-gradient-to-r from-blue-950 via-green-500 to-orange-700 bg-clip-text">Our Users in website</h1>
+        <div class="mb-10 "> <input type="email" placeholder="email" class="p-3 border border-black rounded-lg w-96 me-8"> <button class="px-6 py-3 text-white rounded-2xl bg-sky-700">Search</button> </div>
+          <div class="grid  grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-x-6 gap-y-7">
+            @for (user of users; track $index) {
+                <div class=" border rounded-3xl border-[gray] px-6 py-5 bg-slate-200 mx-2 flex flex-col justify-center items-center text-black font-normal min-w-44">
+                    <div class="bg-white rounded-full img-container">                    <img [src]="user.image" alt="" class="w-20 border border-white rounded-full"> </div>
+                    <p class="py-2">{{user.username}}    <i class="text-xl translate-x-4 fa-solid fa-star" [ngClass]=" user.is_verified?'text-green-500':'text-red-700' "></i>
+                    </p>
+                    <p class="py-2">{{user.email}}</p>
+                    <p class="py-2">{{user.phone}}</p>
+                </div>
+            }
+        </div>
+
+
+</div>
+
+
+</div>
