@@ -9,6 +9,11 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TaskTwoComponent } from './task-two/task-two.component';
+import { ParentcontainerComponent } from './task-two/day 5/parentcontainer/parentcontainer.component';
+import { FormchildComponent } from './task-two/day 5/formchild/formchild.component';
+import { ShowchildComponent } from './task-two/day 5/showchild/showchild.component';
+import { FormsModule } from '@angular/forms'; // Import FormsModule
+
 
 @NgModule({
   declarations: [
@@ -18,11 +23,15 @@ import { TaskTwoComponent } from './task-two/task-two.component';
     SkillsComponent,
     PortfolioComponent,
     FooterComponent,
-    TaskTwoComponent
+    TaskTwoComponent,
+    ParentcontainerComponent,
+    FormchildComponent,
+    ShowchildComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration()

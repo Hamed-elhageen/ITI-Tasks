@@ -1,0 +1,9 @@
+<div class="container px-16 py-10 mt-10 todo-list bg-slate-800">
+  <h2 class="mb-8 text-3xl font-medium text-white">Let's get some work done!</h2>
+  <ul class="">
+    <li *ngFor="let task of tasks; let i = index"  class="flex justify-between w-full mb-5 ">
+      <p  class="flex-1 px-6 py-2 text-4xl font-semibold text-white bg-slate-500">{{ task.name }}</p>
+      <button (click)="onDeleteTask(i)" class="px-6 py-2 text-white bg-red-600">Delete</button>
+    </li>
+  </ul>
+</div>

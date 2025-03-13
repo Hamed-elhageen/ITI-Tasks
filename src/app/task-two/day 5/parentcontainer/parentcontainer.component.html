@@ -1,0 +1,4 @@
+<div class="container ">
+<app-formchild (addTask)="addTask($event)"></app-formchild>
+<app-showchild [tasks]="tasks" (deleteTask)="deleteTask($event)"></app-showchild>
+</div>
