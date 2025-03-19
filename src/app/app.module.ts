@@ -12,7 +12,16 @@ import { TaskTwoComponent } from './task-two/task-two.component';
 import { ParentcontainerComponent } from './task-two/day 5/parentcontainer/parentcontainer.component';
 import { FormchildComponent } from './task-two/day 5/formchild/formchild.component';
 import { ShowchildComponent } from './task-two/day 5/showchild/showchild.component';
-import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from './day 6/header/header.component';
+import { LoginComponent } from './day 6/login/login.component';
+import { RegisterComponent } from './day 6/register/register.component';
+import { DetailsComponent } from './day 6/details/details.component';
+import { NotfoundComponent } from './day 6/notfound/notfound.component';
+import { ProductsComponent } from './day 6/products/products.component'; // Import FormsModule
+import { RouterModule } from '@angular/router';
+import { HomeComponent } from './day 6/home/home.component';
+import { CartComponent } from './day 6/cart/cart.component';
 
 
 @NgModule({
@@ -26,12 +35,21 @@ import { FormsModule } from '@angular/forms'; // Import FormsModule
     TaskTwoComponent,
     ParentcontainerComponent,
     FormchildComponent,
-    ShowchildComponent
+    ShowchildComponent,
+    HeaderComponent,
+    LoginComponent,
+    RegisterComponent,
+    DetailsComponent,
+    NotfoundComponent,
+    ProductsComponent,
+    HomeComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   providers: [
     provideClientHydration()

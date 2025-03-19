@@ -1,0 +1,29 @@
+<div class="container grid grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-8 gap-y-20 ">
+    @for (product of myProducts; track $index) {
+<div class=" card rounded-xl">
+  <a [routerLink]="['/details',product.id]">
+  <div class="relative bg-gray-100 imagecontainer">
+    <img [src]="product.thumbnail" alt="">
+    <p class="absolute z-50 px-4 py-1 text-white top-6 left-6 rounded-xl"  [ngClass]="{
+      'bg-green-500  ': product.availabilityStatus=== 'In Stock',
+      'bg-red-500  border-red-600  ': product.availabilityStatus === 'Low Stock'
+    }">{{product.availabilityStatus}}</p>
+  </div>
+</a>
+  <div class="flex justify-between mt-5 mb-1 text-lg font-semibold">
+    <p >{{product.title}}</p>
+    <p >{{product.price | currency}}
+  </div>
+  <p class="mb-2 text-gray-700">{{product.description.slice(0,40)}}...</p>
+    <div class="flex gap-1">
+      <i *ngFor="let _ of [].constructor(5); let i = index"
+       class="fa-solid"
+       [ngClass]="i < product.rating ? 'text-green-700 fa-star' : 'text-gray-300 fa-star'">
+    </i>
+    </div>
+
+  <button class="px-3 py-2 my-3 border rounded-xl">Add to cart</button>
+</div>
+    }
+
+</div>

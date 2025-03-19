@@ -1,0 +1,11 @@
+.myactive{
+  color: orange;
+  font-weight: 900
+  ;
+}
+a:hover{
+  color: orange;
+  font-weight: 900
+  ;
+  transition-duration: .2s;
+}

@@ -1,0 +1,38 @@
+<div class="max-w-2xl p-6 mx-auto bg-white shadow-lg rounded-xl">
+  <!-- Product Image -->
+  <div class="relative group">
+    <img [src]="product.thumbnail" alt="Nike Air Max 2025"
+         class="w-ful h-[500px] transition-transform duration-300 rounded-lg group-hover:scale-105">
+  </div>
+
+  <!-- Product Info -->
+  <div class="mt-6">
+    <h1 class="text-2xl font-bold text-gray-900">{{product.name}}</h1>
+
+    <!-- Rating Stars -->
+    <div class="flex items-center mt-2">
+      <i class="text-yellow-500 fa-solid fa-star"></i>
+      <i class="text-yellow-500 fa-solid fa-star"></i>
+      <i class="text-yellow-500 fa-solid fa-star"></i>
+      <i class="text-yellow-500 fa-solid fa-star"></i>
+      <i class="text-gray-300 fa-solid fa-star"></i>
+      <span class="ml-2 text-gray-500">4 / 5</span>
+    </div>
+
+    <!-- Price -->
+    <p class="mt-2 text-xl font-semibold text-green-600">{{product.price | currency}}</p>
+
+    <!-- Stock Status -->
+    <p class="mt-2 text-sm font-medium text-green-600 uppercase">{{product.availabilityStatus}}</p>
+
+    <!-- Product Description -->
+    <p class="mt-4 text-gray-600">
+      {{product.description}}
+    </p>
+
+    <!-- Add to Cart Button -->
+    <button class="w-full px-6 py-3 mt-4 font-semibold text-white transition duration-300 ease-in-out bg-green-600 rounded-lg shadow-md hover:bg-green-700">
+      Add to Cart
+    </button>
+  </div>
+</div>
