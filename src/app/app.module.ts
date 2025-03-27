@@ -22,6 +22,8 @@ import { ProductsComponent } from './day 6/products/products.component'; // Impo
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './day 6/home/home.component';
 import { CartComponent } from './day 6/cart/cart.component';
+import { ReactiveFormsModule } from '@angular/forms'; // <-- Add this import
+
 
 
 @NgModule({
@@ -49,7 +51,8 @@ import { CartComponent } from './day 6/cart/cart.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideClientHydration()

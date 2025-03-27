@@ -1,31 +1,64 @@
-<script src="https://cdn.tailwindcss.com"></script>
-<body class="bg-gray-100">
-  <div class="container py-8 mx-auto">
-    <h1 class="mb-6 text-2xl font-bold text-center">Registration Form</h1>
-    <form class="w-full max-w-sm p-8 mx-auto bg-white rounded-md shadow-md">
-      <div class="mb-4">
-        <label class="block mb-2 text-sm font-bold text-gray-700" for="name">Name</label>
-        <input class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
-          type="text" id="name" name="name" placeholder="John Doe">
+<div class="flex items-center justify-center min-h-screen px-4 py-12 bg-gray-50">
+  <div class="w-full max-w-md p-8 bg-white rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold text-center text-gray-900">Create an Account</h2>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="mt-6 space-y-4">
+      <!-- Email -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Email Address</label>
+        <input type="email" formControlName="email"
+               class="w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-indigo-500"
+               [class.border-red-500]="submitted && f.email.invalid">
+        <div *ngIf="submitted && f.email.errors" class="mt-1 text-xs text-red-500">
+          <div *ngIf="f.email.errors.required">Email is required</div>
+          <div *ngIf="f.email.errors.email">Enter a valid email</div>
+        </div>
       </div>
-      <div class="mb-4">
-        <label class="block mb-2 text-sm font-bold text-gray-700" for="email">Email</label>
-        <input class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
-          type="email" id="email" name="email" placeholder="john@example.com">
+
+      <!-- Name -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Full Name</label>
+        <input type="text" formControlName="name"
+               class="w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-indigo-500"
+               [class.border-red-500]="submitted && f.name.invalid">
+        <div *ngIf="submitted && f.name.errors" class="mt-1 text-xs text-red-500">
+          <div *ngIf="f.name.errors.required">Name is required</div>
+        </div>
       </div>
-      <div class="mb-4">
-        <label class="block mb-2 text-sm font-bold text-gray-700" for="password">Password</label>
-        <input class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
-          type="password" id="password" name="password" placeholder="********">
+
+      <!-- Username -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Username</label>
+        <input type="text" formControlName="username"
+               class="w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-indigo-500"
+               [class.border-red-500]="submitted && f.username.invalid">
+        <div *ngIf="submitted && f.username.errors" class="mt-1 text-xs text-red-500">
+          <div *ngIf="f.username.errors.required">Username is required</div>
+          <div *ngIf="f.username.errors.whitespace">No spaces allowed</div>
+        </div>
       </div>
-      <div class="mb-4">
-        <label class="block mb-2 text-sm font-bold text-gray-700" for="confirm-password">Confirm Password</label>
-        <input class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
-          type="password" id="confirm-password" name="confirm-password" placeholder="********">
+
+      <!-- Password -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Password</label>
+        <input type="password" formControlName="password"
+               class="w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-indigo-500"
+               [class.border-red-500]="submitted && f.password.invalid">
+        <div *ngIf="submitted && f.password.errors" class="mt-1 text-xs text-red-500">
+          <div *ngIf="f.password.errors.required">Password is required</div>
+          <div *ngIf="f.password.errors.minlength">At least 8 characters</div>
+          <div *ngIf="f.password.errors.missingUpper">At least one uppercase letter</div>
+          <div *ngIf="f.password.errors.missingLower">At least one lowercase letter</div>
+          <div *ngIf="f.password.errors.missingDigit">At least one digit</div>
+          <div *ngIf="f.password.errors.missingSpecial">At least one special character (*@%$#)</div>
+        </div>
       </div>
-      <button
-        class="w-full px-4 py-2 text-sm font-bold text-white transition duration-300 bg-indigo-500 rounded-md hover:bg-indigo-600"
-        type="submit">Register</button>
+
+      <!-- Submit Button -->
+      <button type="submit"
+              class="w-full py-2 text-white bg-indigo-600 rounded-md hover:bg-indigo-700">
+        Register
+      </button>
     </form>
   </div>
-</body>
+</div>
